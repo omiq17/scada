@@ -5,6 +5,10 @@
     text-align: center
 }
 
+#station{
+    text-align: center;
+    color: #2f4f4f;
+}
 .card {
     background-color: #2f4f4f;
     border-color: #2f4f4f;
