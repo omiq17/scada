@@ -1,0 +1,19 @@
+.navbar>span {
+    color: #2f4f4f;    
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center
+}
+
+.card {
+    background-color: #2f4f4f;
+    border-color: #2f4f4f;
+    color: white;
+    border-radius: 25px 25px 5px 5px;
+}
+.card-deck {
+    margin-bottom: 15px;
+}
+.card-block {
+    padding: 15px;
+}
