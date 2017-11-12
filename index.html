@@ -1,98 +1,140 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>স্ক্যাডা </title>
+    <title>ওয়াসা স্ক্যাডা </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="http://dwasa.org.bd/wp-content/uploads/2015/09/wasa.png" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 </head>
   <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+            <img src="http://dwasa.org.bd/wp-content/uploads/2015/09/wasa.png" width="55" height="55" class="d-inline-block align-top" alt="ওয়াসা স্ক্যাডা">
+            ওয়াসা স্ক্যাডা
+        </a>
+        <a class="navbar-text" href="https://www.google.com/" target="_blank">
+            গুগল  
+        </a>
+    </nav>
     <div class="container">
-        <!-- Navbar -->
-        <nav class="navbar ">
-            <span class="navbar-brand" href="#">স্ক্যাডা</span>
-        </nav>
+        <div class="row">
+            <!-- 
+                Left Column 
+            -->
+            <div id="left" class="col-12 col-md-4">
+                <div class="bootstrap-vertical-nav">
+                    <h4><b>পাম্প স্টেশন লিস্ট</b></h4>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" id="send" href="#">বকশি বাজার PRV স্টেশন</a>
+                        </li>
+                    </ul>
+                </div>
 
-        <h3 id="station">
-                স্টেশন আইডি  
-            <b><span id="station_id">০০১</span></b>
-        </h3>
-        <!-- Cards LIne 1 -->
-        <div class="card-deck">
-            <div class="card card-inverse  text-center">
-                <div class="card-block">
-                <h4 class="card-title">ব্যাটারি ভোল্টেজ</h4>
-                <p id="battery_voltage" class="card-text">-</p>                
+            </div>
+            <!-- end Left column -->
+            <!-- 
+                Right Column 
+            -->
+            <div id="right" class="col-12 col-md-8">
+                <h3 id="station">
+                        স্টেশন আইডি  
+                    <b><span id="station_id">-</span></b>
+                </h3>
+                <!-- Cards LIne 1 -->
+                <div class="card-deck">
+                    <div class="card card-inverse  text-center">
+                        <div class="card-block">
+                        <h4 class="card-title">ব্যাটারি ভোল্টেজ</h4>
+                        <p id="battery_voltage" class="card-text">-</p>                
+                        </div>
+                    </div>
+                    <div class="card card-inverse  text-center">
+                        <div class="card-block">
+                        <h4 class="card-title">টারবাইন ভোল্টেজ</h4>
+                        <p id="turbine_voltage" class="card-text">-</p>                
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Cards LIne 2-->
+                <div class="card-deck">
+                    <div class="card card-inverse  text-center">
+                        <div class="card-block">
+                        <h4 class="card-title">ইনলেট প্রেশার</h4>
+                        <p id="inlet_pressure" class="card-text">-</p>                
+                        </div>
+                    </div>
+                    <div class="card card-inverse  text-center">
+                        <div class="card-block">
+                        <h4 class="card-title">আউটলেট প্রেশার</h4>
+                        <p id="outlet_pressure" class="card-text">-</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Cards  LIne 3-->
+                <div class="card-deck">
+                    <div class="card card-inverse  text-center">
+                        <div class="card-block">
+                        <h4 class="card-title">ফ্লো  রেট প্রতি মিনিট</h4>
+                        <p id="flowrate" class="card-text">-</p>
+                        </div>
+                    </div>
+                    <div class="card card-inverse  text-center">
+                        <div class="card-block">
+                        <h4 class="card-title">ওপেনিং</h4>
+                        <p id="opening" class="card-text">-</p>                                
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Cards  LIne 4-->
+                <div class="card-deck">
+                    <div class="card card-inverse  text-center">
+                        <div class="card-block">
+                        <h4 class="card-title">সেট ভ্যালু</h4>
+                        <p id="set_value" class="card-text">-</p>                
+                        </div>
+                    </div>
+                    <div class="card card-inverse  text-center">
+                        <div class="card-block">
+                        <h4 class="card-title">মোটর পানির প্রবাহ</h4>
+                        <p id="total_flow" class="card-text">-</p>                                
+                        </div>
+                    </div>
+                </div>
+                <!-- Cards  LIne 5-->
+                <div class="card-deck">
+                    <div class="card card-inverse  text-center">
+                        <div class="card-block">
+                        <h4 class="card-title">ভেতরের ইনলেট প্রেশার</h4>
+                        <p id="inside_inlet_pressure" class="card-text">-</p>                
+                        </div>
+                    </div>
+                    <div class="card card-inverse  text-center">
+                        <div class="card-block">
+                        <h4 class="card-title">ভেতরের আউটলেট প্রেশার</h4>
+                        <p id="inside_outlet_pressure" class="card-text">-</p>                                
+                        </div>
+                    </div>
+                </div>
+                <!-- Gif of pupm -->
+                <div id="gif">
+                    <img src="tube.gif" alt="tube"/>
                 </div>
             </div>
-            <div class="card card-inverse  text-center">
-                <div class="card-block">
-                <h4 class="card-title">টারবাইন ভোল্টেজ</h4>
-                <p id="turbine_voltage" class="card-text">-</p>                
-                </div>
-            </div>
+            <!-- end Right column -->
         </div>
-
-        <!-- Cards LIne 2-->
-        <div class="card-deck">
-            <div class="card card-inverse  text-center">
-                <div class="card-block">
-                <h4 class="card-title">ইনলেট প্রেশার</h4>
-                <p id="inlet_pressure" class="card-text">-</p>                
-                </div>
-            </div>
-            <div class="card card-inverse  text-center">
-                <div class="card-block">
-                <h4 class="card-title">আউটলেট প্রেশার</h4>
-                <p id="outlet_pressure" class="card-text">-</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Cards  LIne 3-->
-        <div class="card-deck">
-            <div class="card card-inverse  text-center">
-                <div class="card-block">
-                <h4 class="card-title">ফ্লো  রেট প্রতি মিনিট</h4>
-                <p id="flowrate" class="card-text">-</p>
-                </div>
-            </div>
-            <div class="card card-inverse  text-center">
-                <div class="card-block">
-                <h4 class="card-title">ওপেনিং</h4>
-                <p id="opening" class="card-text">-</p>                                
-                </div>
-            </div>
-        </div>
-
-        <!-- Cards  LIne 4-->
-        <div class="card-deck">
-            <div class="card card-inverse  text-center">
-                <div class="card-block">
-                <h4 class="card-title">সেট ভ্যালু</h4>
-                <p id="set_value" class="card-text">-</p>                
-                </div>
-            </div>
-            <div class="card card-inverse  text-center">
-                <div class="card-block">
-                <h4 class="card-title">মোটর পানির প্রবাহ</h4>
-                <p id="total_flow" class="card-text">-</p>                                
-                </div>
-            </div>
-        </div>
-
-        <!-- Check Id form -->
-        <div class="form-inline">
-            <div class="form-group mx-sm-3">
-                <input type="text" class="form-control" id="stn_no" placeholder="স্টেশন আইডি দিন ">
-            </div>
-            <a href="#" type="submit" id="send" class="btn">দেখুন </a>                                
-        </div>
+        <!-- end column -->
 
     </div>
     
@@ -108,17 +150,13 @@
             var socket = io.connect("http://localhost:9001");
             //var socket = io.connect("http://116.193.218.253:9001");
 
-            // var stn_no = document.getElementById('stn_no');
-            // var btn = document.getElementById('send');
-            // var output = document.getElementById('output');
-
             var stn_no = $('#stn_no');            
             var btn = $("#send");
             //emit events
             btn.bind('click', function (event) {
                 event.preventDefault();
                 socket.emit('chat', {
-                    station_id: stn_no.value
+                    station_id: 001
                 });
             });
 
@@ -135,9 +173,9 @@
                 $('#set_value').text(dataobj.set_val);
                 $('#total_flow').text(dataobj.total_flow); 
 
-                // output.innerHTML = '<p><strong> স্টেশন আইডিঃ ' + dataobj.station_id + ':</strong> </p>ব্যাটারি ভোল্টেজঃ ' + dataobj.batt_stat + ' ভোল্ট </p>'+ 'টারবাইন ভোল্টেজঃ' + dataobj.turb_vol + ' ভোল্ট </p>'
-                // output.innerHTML = output.innerHTML+'ইনলেট প্রেশারঃ ' + dataobj.inlet_pr + 'বার </p> আউটলেট প্রেশারঃ ' + dataobj.outlet_pr + ' বার </p> ফ্লো-রেট প্রতি মিনিটঃ  ' + dataobj.flowrate + ' ঘন মিটার </p>'
-                // output.innerHTML = output.innerHTML+'ওপেনিংঃ ' + dataobj.per_open + ' % </p> সেট ভ্যালুঃ ' + dataobj.set_val + '</p> মোট পানির প্রবাহঃ ' + dataobj.total_flow + ' ঘন মিটার </p>'
+                //  Set your dataobj for this two please!!!!!!!!!!!!!!!!!!!!!!!!
+                $('#inside_inlet_pressure').text(dataobj.inside_inlet_pr);
+                $('#inside_outlet_pressure').text(dataobj.inside_outlet_pr); 
             });
 
         });

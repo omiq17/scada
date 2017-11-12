@@ -1,13 +1,40 @@
-.navbar>span {
-    color: #2f4f4f;    
+body{
+    color: #2f4f4f;     
+    background-color: #e6e6fa;
+}
+.navbar {
+    background-color: #2f4f4f; 
+    color: #e6e6fa;
+}
+.navbar-brand {
     font-size: 35px;
     font-weight: bold;
-    text-align: center
+}
+.navbar-text {
+    font-size: 19px;
+}
+.navbar-brand, .navbar-text {
+    color: #e6e6fa;
+    padding:5px;
+    margin: 0px 7%;
+}
+.navbar-brand:hover, .navbar-text:hover, .nav-link:hover {
+    -webkit-transition: 0.4s;
+    -moz-transition:0.4s;
+    -os-transition:0.4s;
+    transition: 0.4s ease all;
+    color: #e6e6fa;
+    text-decoration: none;
+}
+.navbar-brand:hover {
+    font-size: 37px;
+}
+.navbar-text:hover {
+    font-size: 21px;
 }
 
 #station{
     text-align: center;
-    color: #2f4f4f;
 }
 .card {
     background-color: #2f4f4f;
@@ -22,8 +49,28 @@
     padding: 15px;
 }
 
-#send {
+.btn {
     background-color: #2f4f4f;
     border-color: #2f4f4f;
     color: white;
+}
+.nav-link{
+    background-color: #2f4f4f;
+    color: white;    
+    font-size: 19px;    
+    border-radius: 15px 15px 3px 3px;
+}
+.nav-link:hover{
+    color: #2f4f4f;    
+    background-color: white;
+    font-size: 21px;    
+    font-weight: bold;
+}
+#left, #right {
+    margin: 25px 0px;
+}
+
+#gif>img{
+    display: block;
+    margin: auto;
 }
