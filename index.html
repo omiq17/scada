@@ -91,7 +91,7 @@
             <div class="form-group mx-sm-3">
                 <input type="text" class="form-control" id="stn_no" placeholder="স্টেশন আইডি দিন ">
             </div>
-            <button type="submit" id="send" class="btn">দেখুন </button>                                
+            <a href="#" type="submit" id="send" class="btn">দেখুন </a>                                
         </div>
 
     </div>
@@ -115,7 +115,8 @@
             var stn_no = $('#stn_no');            
             var btn = $("#send");
             //emit events
-            btn.bind('click', function () {
+            btn.bind('click', function (event) {
+                event.preventDefault();
                 socket.emit('chat', {
                     station_id: stn_no.value
                 });
