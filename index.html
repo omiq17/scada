@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 </head>
   <body>
     <div class="container">
@@ -19,20 +20,20 @@
 
         <h3 id="station">
                 স্টেশন আইডি  
-            <span id="station_id">০০১</span>
+            <b><span id="station_id">০০১</span></b>
         </h3>
         <!-- Cards LIne 1 -->
         <div class="card-deck">
             <div class="card card-inverse  text-center">
                 <div class="card-block">
                 <h4 class="card-title">ব্যাটারি ভোল্টেজ</h4>
-                <p class="card-text">Some Value</p>                
+                <p id="battery_voltage" class="card-text">-</p>                
                 </div>
             </div>
             <div class="card card-inverse  text-center">
                 <div class="card-block">
                 <h4 class="card-title">টারবাইন ভোল্টেজ</h4>
-                <p class="card-text">Some Value</p>                
+                <p id="turbine_voltage" class="card-text">-</p>                
                 </div>
             </div>
         </div>
@@ -42,13 +43,13 @@
             <div class="card card-inverse  text-center">
                 <div class="card-block">
                 <h4 class="card-title">ইনলেট প্রেশার</h4>
-                <p class="card-text">Some Value</p>                
+                <p id="inlet_pressure" class="card-text">-</p>                
                 </div>
             </div>
             <div class="card card-inverse  text-center">
                 <div class="card-block">
                 <h4 class="card-title">আউটলেট প্রেশার</h4>
-                <p class="card-text">Some Value</p>
+                <p id="outlet_pressure" class="card-text">-</p>
                 </div>
             </div>
         </div>
@@ -58,13 +59,13 @@
             <div class="card card-inverse  text-center">
                 <div class="card-block">
                 <h4 class="card-title">ফ্লো  রেট প্রতি মিনিট</h4>
-                <p class="card-text">Some Value</p>
+                <p id="flowrate" class="card-text">-</p>
                 </div>
             </div>
             <div class="card card-inverse  text-center">
                 <div class="card-block">
                 <h4 class="card-title">ওপেনিং</h4>
-                <p class="card-text">Some Value</p>                                
+                <p id="opening" class="card-text">-</p>                                
                 </div>
             </div>
         </div>
@@ -74,17 +75,24 @@
             <div class="card card-inverse  text-center">
                 <div class="card-block">
                 <h4 class="card-title">সেট ভ্যালু</h4>
-                <p class="card-text">Some Value</p>                
+                <p id="set_value" class="card-text">-</p>                
                 </div>
             </div>
             <div class="card card-inverse  text-center">
                 <div class="card-block">
                 <h4 class="card-title">মোটর পানির প্রবাহ</h4>
-                <p class="card-text">Some Value</p>                                
+                <p id="total_flow" class="card-text">-</p>                                
                 </div>
             </div>
         </div>
-            
+
+        <!-- Check Id form -->
+        <div class="form-inline">
+            <div class="form-group mx-sm-3">
+                <input type="text" class="form-control" id="stn_no" placeholder="স্টেশন আইডি দিন ">
+            </div>
+            <button type="submit" id="send" class="btn">দেখুন </button>                                
+        </div>
 
     </div>
     
@@ -95,27 +103,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script>
-        // making connections
-        var socket = io.connect("http://localhost:9001");
-        //var socket = io.connect("http://116.193.218.253:9001");
+        $(document).ready(function(){ 
+            // making connections
+            var socket = io.connect("http://localhost:9001");
+            //var socket = io.connect("http://116.193.218.253:9001");
 
-        var station_id = document.getElementById('station_id');
-        var btn = document.getElementById('send');
-        var output = document.getElementById('output');
+            // var stn_no = document.getElementById('stn_no');
+            // var btn = document.getElementById('send');
+            // var output = document.getElementById('output');
 
-        //emit events
-
-        btn.addEventListener('click', function () {
-            socket.emit('chat', {
-                station_id: stn_no.value
+            var stn_no = $('#stn_no');            
+            var btn = $("#send");
+            //emit events
+            btn.bind('click', function () {
+                socket.emit('chat', {
+                    station_id: stn_no.value
+                });
             });
-        });
 
-        // listen events
-        socket.on('chat', function (dataobj) {
-            station_id.innerHTML = dataobj.station_id + ':</strong> </p>ব্যাটারি ভোল্টেজঃ ' + dataobj.batt_stat + ' ভোল্ট </p>'+ 'টারবাইন ভোল্টেজঃ' + dataobj.turb_vol + ' ভোল্ট </p>'
-            output.innerHTML = output.innerHTML+'ইনলেট প্রেশারঃ ' + dataobj.inlet_pr + 'বার </p> আউটলেট প্রেশারঃ ' + dataobj.outlet_pr + ' বার </p> ফ্লো-রেট প্রতি মিনিটঃ  ' + dataobj.flowrate + ' ঘন মিটার </p>'
-            output.innerHTML = output.innerHTML+'ওপেনিংঃ ' + dataobj.per_open + ' % </p> সেট ভ্যালুঃ ' + dataobj.set_val + '</p> মোট পানির প্রবাহঃ ' + dataobj.total_flow + ' ঘন মিটার </p>'
+            // listen events
+            socket.on('chat', function (dataobj) {
+                $('#station_id').text(dataobj.station_id);
+                $('#battery_voltage').text(dataobj.batt_stat);
+                $('#turbine_voltage').text(dataobj.turb_vol);
+                $('#inlet_pressure').text(dataobj.inlet_pr);
+
+                $('#outlet_pressure').text(dataobj.outlet_pr);
+                $('#flowrate').text(dataobj.flowrate);
+                $('#opening').text(dataobj.per_open);
+                $('#set_value').text(dataobj.set_val);
+                $('#total_flow').text(dataobj.total_flow); 
+
+                // output.innerHTML = '<p><strong> স্টেশন আইডিঃ ' + dataobj.station_id + ':</strong> </p>ব্যাটারি ভোল্টেজঃ ' + dataobj.batt_stat + ' ভোল্ট </p>'+ 'টারবাইন ভোল্টেজঃ' + dataobj.turb_vol + ' ভোল্ট </p>'
+                // output.innerHTML = output.innerHTML+'ইনলেট প্রেশারঃ ' + dataobj.inlet_pr + 'বার </p> আউটলেট প্রেশারঃ ' + dataobj.outlet_pr + ' বার </p> ফ্লো-রেট প্রতি মিনিটঃ  ' + dataobj.flowrate + ' ঘন মিটার </p>'
+                // output.innerHTML = output.innerHTML+'ওপেনিংঃ ' + dataobj.per_open + ' % </p> সেট ভ্যালুঃ ' + dataobj.set_val + '</p> মোট পানির প্রবাহঃ ' + dataobj.total_flow + ' ঘন মিটার </p>'
+            });
+
         });
     </script>
   </body>

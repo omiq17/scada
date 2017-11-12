@@ -21,3 +21,9 @@
 .card-block {
     padding: 15px;
 }
+
+#send {
+    background-color: #2f4f4f;
+    border-color: #2f4f4f;
+    color: white;
+}
