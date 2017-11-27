@@ -1,7 +1,13 @@
-body{
+ /* Extra small devices (portrait phones, less than 576px) */
+ /* No media query since this is the default in Bootstrap */
+ body{
     color: #2f4f4f;     
     background-color: #e6e6fa;
 }
+
+/* 
+navbar
+ */
 .navbar {
     background-color: #2f4f4f; 
     color: #e6e6fa;
@@ -16,7 +22,6 @@ body{
 .navbar-brand, .navbar-text {
     color: #e6e6fa;
     padding:5px;
-    margin: 0px 7%;
 }
 .navbar-brand:hover, .navbar-text:hover, .nav-link:hover {
     -webkit-transition: 0.4s;
@@ -32,28 +37,6 @@ body{
 .navbar-text:hover {
     font-size: 21px;
 }
-
-#station{
-    text-align: center;
-}
-.card {
-    background-color: #2f4f4f;
-    border-color: #2f4f4f;
-    color: white;
-    border-radius: 25px 25px 5px 5px;
-}
-.card-deck {
-    margin-bottom: 15px;
-}
-.card-block {
-    padding: 15px;
-}
-
-.btn {
-    background-color: #2f4f4f;
-    border-color: #2f4f4f;
-    color: white;
-}
 .nav-link{
     background-color: #2f4f4f;
     color: white;    
@@ -66,11 +49,117 @@ body{
     font-size: 21px;    
     font-weight: bold;
 }
-#left, #right {
-    margin: 25px 0px;
+#station{
+    text-align: center;
+    margin: 15px 0px;
 }
 
-#gif>img{
-    display: block;
-    margin: auto;
+/* 
+card
+*/
+.card {
+    background-color: #2f4f4f;
+    border-color: #2f4f4f;
+    color: white;
+    margin: 15px 0px;
 }
+.card-block {
+    padding: 5px;
+}
+
+/* grid column */
+.col-2 {
+    margin: 15px 0px;
+}
+.col-5 {
+    padding: 0px;
+}
+
+/* 
+progrss-bar
+ */
+
+ .progress-bar-vertical {
+    width: 100%;
+    height: 100%;
+    background-color: darkseagreen;
+    display: flex;
+    align-items: flex-end;
+    float: left;
+  }
+  
+  .progress-bar-vertical .progress-bar {
+    width: 100%;
+    height: 0;
+    background-color: #2f4f4f;    
+    -webkit-transition: height 1s ease;
+    -o-transition: height 1s ease;
+    transition: height 1s ease;
+  }
+
+/* 
+extra
+ */
+.btn {
+    background-color: #2f4f4f;
+    border-color: #2f4f4f;
+    color: white;
+}
+
+/* prv image */
+#motor img {
+    height: 180px;
+}
+#motor .col-2 {
+    padding: 0px;
+}
+#motor {
+    background-image: url('water2.gif');
+    background-position: 0px 85px;
+    background-repeat: no-repeat;
+    background-size: 100% 41%;
+}
+
+/* 
+3rd row
+ */
+ #lower .card {
+     margin: 3px 0px;
+ }
+ #horizontal h5{
+    float: left;
+    margin: 0px;
+ }
+ #horizontal p{
+    float: right;
+ }
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    .navbar-brand, .navbar-text {
+        margin: 0px 7%;
+    }
+    .col-5 {
+        padding: 0px 10px;
+    }
+    #motor img {
+        height: 250px;
+    }
+    #motor .col-2 {
+        padding: 0px 10px;
+    }
+    #motor {
+        background-position: 0px 115px;
+    }
+    #horizontal {
+        padding: 10px;
+    }
+ }
+
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {  }
+
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  }
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }

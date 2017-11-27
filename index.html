@@ -24,119 +24,113 @@
             গুগল  
         </a>
     </nav>
+
+    <!-- Main content -->
     <div class="container">
+        <h3 id="station">
+                স্টেশন নাম:   
+            <b><span id="station_id">বকশী বাজার মোড়</span></b>
+        </h3>
+        
+        <!-- First Row -->
         <div class="row">
-            <!-- 
-                Left Column 
-            -->
-            <div id="left" class="col-12 col-md-4">
-                <div class="bootstrap-vertical-nav">
-                    <h4><b>পাম্প স্টেশন লিস্ট</b></h4>
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" id="send" href="#">বকশি বাজার PRV স্টেশন</a>
-                        </li>
-                    </ul>
+            <!-- First column -->
+            <div class="col-5">
+                <div class="card card-inverse  text-center">
+                    <div class="card-block">
+                        <h5 class="card-title">ব্যাটারি ভোল্টেজ</h5>
+                        <p id="battery_voltage" class="card-text"><span>- </span> ডিসি  </p>                
+                    </div>
                 </div>
+                <div class="card card-inverse  text-center">
+                    <div class="card-block">
+                        <h5 class="card-title">পি আর ভি ওপেন </h5>
+                        <p id="battery_voltage" class="card-text"><span>- </span> %  </p>                
+                    </div>
+                </div>
+            </div>           
 
-            </div>
-            <!-- end Left column -->
-            <!-- 
-                Right Column 
-            -->
-            <div id="right" class="col-12 col-md-8">
-                <h3 id="station">
-                        স্টেশন আইডি  
-                    <b><span id="station_id">-</span></b>
-                </h3>
-                <!-- Cards LIne 1 -->
-                <div class="card-deck">
-                    <div class="card card-inverse  text-center">
-                        <div class="card-block">
-                        <h4 class="card-title">ব্যাটারি ভোল্টেজ</h4>
-                        <p id="battery_voltage" class="card-text">-</p>                
-                        </div>
+            <!-- Second column -->
+            <div class="col-2">
+                <div class="progress progress-bar-vertical">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="height: 55%;">
                     </div>
-                    <div class="card card-inverse  text-center">
-                        <div class="card-block">
-                        <h4 class="card-title">টারবাইন ভোল্টেজ</h4>
-                        <p id="turbine_voltage" class="card-text">-</p>                
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Cards LIne 2-->
-                <div class="card-deck">
-                    <div class="card card-inverse  text-center">
-                        <div class="card-block">
-                        <h4 class="card-title">ইনলেট প্রেশার</h4>
-                        <p id="inlet_pressure" class="card-text">-</p>                
-                        </div>
-                    </div>
-                    <div class="card card-inverse  text-center">
-                        <div class="card-block">
-                        <h4 class="card-title">আউটলেট প্রেশার</h4>
-                        <p id="outlet_pressure" class="card-text">-</p>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Cards  LIne 3-->
-                <div class="card-deck">
-                    <div class="card card-inverse  text-center">
-                        <div class="card-block">
-                        <h4 class="card-title">ফ্লো  রেট প্রতি মিনিট</h4>
-                        <p id="flowrate" class="card-text">-</p>
-                        </div>
-                    </div>
-                    <div class="card card-inverse  text-center">
-                        <div class="card-block">
-                        <h4 class="card-title">ওপেনিং</h4>
-                        <p id="opening" class="card-text">-</p>                                
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Cards  LIne 4-->
-                <div class="card-deck">
-                    <div class="card card-inverse  text-center">
-                        <div class="card-block">
-                        <h4 class="card-title">সেট ভ্যালু</h4>
-                        <p id="set_value" class="card-text">-</p>                
-                        </div>
-                    </div>
-                    <div class="card card-inverse  text-center">
-                        <div class="card-block">
-                        <h4 class="card-title">মোটর পানির প্রবাহ</h4>
-                        <p id="total_flow" class="card-text">-</p>                                
-                        </div>
-                    </div>
-                </div>
-                <!-- Cards  LIne 5-->
-                <div class="card-deck">
-                    <div class="card card-inverse  text-center">
-                        <div class="card-block">
-                        <h4 class="card-title">ভেতরের ইনলেট প্রেশার</h4>
-                        <p id="inside_inlet_pressure" class="card-text">-</p>                
-                        </div>
-                    </div>
-                    <div class="card card-inverse  text-center">
-                        <div class="card-block">
-                        <h4 class="card-title">ভেতরের আউটলেট প্রেশার</h4>
-                        <p id="inside_outlet_pressure" class="card-text">-</p>                                
-                        </div>
-                    </div>
-                </div>
-                <!-- Gif of pupm -->
-                <div id="gif">
-                    <img src="tube.gif" alt="tube"/>
                 </div>
             </div>
-            <!-- end Right column -->
+
+            <!-- Third column -->
+            <div class="col-5">
+                <div class="card card-inverse  text-center">
+                    <div class="card-block">
+                        <h5 class="card-title">টারবাইন ভোল্টেজ</h5>
+                        <p id="battery_voltage" class="card-text"><span>- </span> এসি   </p>                
+                    </div>
+                </div>
+                <div class="card card-inverse  text-center">
+                    <div class="card-block">
+                        <h5 class="card-title">পি আর ভি সেটিং</h5>
+                        <p id="battery_voltage" class="card-text"><span>- </span> বার   </p>                
+                    </div>
+                </div>
+            </div>      
         </div>
-        <!-- end column -->
+        <!-- /First row -->
 
-    </div>
+        <!-- 2nd row - motor image -->
+        <div id="motor" class="row">
+            <div class="col-2">
+                <div class="card card-inverse  text-center">
+                    <div class="card-block">
+                        <p id="battery_voltage" class="card-text"><span>- </span> ডিসি  </p>                
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-8">
+                <img src="prv.png" class="mx-auto d-block" alt="prv">                    
+            </div>
+
+            <div class="col-2">
+                <div class="card card-inverse  text-center">
+                    <div class="card-block">
+                        <p id="battery_voltage" class="card-text"><span>- </span> ডিসি  </p>                
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /2nd row -->
+
+        <!-- 3rd row  -->
+        <div id="lower" class="row ">
+            <div class="col-12 card card-inverse  text-center">
+                <div id="horizontal" class="card-block">
+                    <h5>ইনলেট প্রেশার</h5>                            
+                    <p id="battery_voltage" class="card-text"><span>- </span> বার  </p>                
+                </div>
+            </div>
+            <div class="col-12 card card-inverse  text-center">
+                <div id="horizontal" class="card-block">
+                    <h5>আউটলেট প্রেশার</h5>                            
+                    <p id="battery_voltage" class="card-text"><span>- </span> বার  </p>                
+                </div>
+            </div>
+            <div class="col-12 card card-inverse  text-center">
+                <div id="horizontal" class="card-block">
+                    <h5>ফ্লো রেট প্রতি মিনিট</h5>                            
+                    <p id="battery_voltage" class="card-text"><span>- </span>   </p>                
+                </div>
+            </div>
+            <div class="col-12 card card-inverse  text-center">
+                <div id="horizontal" class="card-block">
+                    <h5>টোটাল ফ্লো</h5>                            
+                    <p id="battery_voltage" class="card-text"><span>- </span>   </p>                
+                </div>
+            </div>
+        </div>
+        <!-- /3rd row -->
+            
+    </div> 
+   
     
 
     <!-- Optional JavaScript -->
@@ -162,20 +156,20 @@
 
             // listen events
             socket.on('chat', function (dataobj) {
-                $('#station_id').text(dataobj.station_id);
-                $('#battery_voltage').text(dataobj.batt_stat);
-                $('#turbine_voltage').text(dataobj.turb_vol);
-                $('#inlet_pressure').text(dataobj.inlet_pr);
+                $('#station_id span').text(dataobj.station_id);
+                $('#battery_voltage span').text(dataobj.batt_stat);
+                $('#turbine_voltage span').text(dataobj.turb_vol);
+                $('#inlet_pressure span').text(dataobj.inlet_pr);
 
-                $('#outlet_pressure').text(dataobj.outlet_pr);
-                $('#flowrate').text(dataobj.flowrate);
-                $('#opening').text(dataobj.per_open);
-                $('#set_value').text(dataobj.set_val);
-                $('#total_flow').text(dataobj.total_flow); 
+                $('#outlet_pressure span').text(dataobj.outlet_pr);
+                $('#flowrate span').text(dataobj.flowrate);
+                $('#opening span').text(dataobj.per_open);
+                $('#set_value span').text(dataobj.set_val);
+                $('#total_flow span').text(dataobj.total_flow); 
 
                 //  Set your dataobj for this two please!!!!!!!!!!!!!!!!!!!!!!!!
-                $('#inside_inlet_pressure').text(dataobj.inside_inlet_pr);
-                $('#inside_outlet_pressure').text(dataobj.inside_outlet_pr); 
+                $('#inside_inlet_pressure span').text(dataobj.inside_inlet_pr);
+                $('#inside_outlet_pressure span').text(dataobj.inside_outlet_pr); 
             });
 
         });
