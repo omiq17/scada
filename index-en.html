@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>ওয়াসা স্ক্যাডা </title>
+    <title>WASA Scada</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,20 +18,20 @@
     <nav class="navbar">
         <a class="navbar-brand" href="#">
             <img src="http://dwasa.org.bd/wp-content/uploads/2015/09/wasa.png" width="55" height="55" class="d-inline-block align-top" alt="ওয়াসা স্ক্যাডা">
-            ওয়াসা স্ক্যাডা
+            WASA Scada
         </a>
-        <a class="navbar-text" href="index-en.html">
-            ইংরেজি  
+        <a class="navbar-text" href="index.html">
+            Bangla  
         </a>
     </nav>
 
     <!-- Menu -->
     <div id="menu" class="container">
         <div class="bootstrap-vertical-nav">
-            <h4><b>পাম্প স্টেশন লিস্ট</b></h4>
+            <h4><b>Pump Station List</b></h4>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" id="send" href="#">বকশি বাজার পি আর ভি  স্টেশন</a>
+                    <a class="nav-link" id="send" href="#">Bakshi Bazar PRV Station</a>
                 </li>
             </ul>
         </div>
@@ -40,8 +40,8 @@
     <!-- Main content -->
     <div id="main" class="container" style="display: none">
         <h3 id="station">
-                স্টেশন নাম:   
-            <b><span id="station_id">বকশী বাজার মোড়</span></b>
+                Station Name:   
+            <b><span id="station_id">Bakshi Bazar Mor</span></b>
         </h3>
         
         <!-- First Row -->
@@ -50,13 +50,13 @@
             <div class="col-5">
                 <div class="card card-inverse  text-center">
                     <div class="card-block">
-                        <h5 class="card-title"> ব্যাটারি ভোল্টেজ &nbsp; </h5>
-                        <p id="battery_voltage" class="card-text"><span>- </span> ডিসি  </p>                
+                        <h5 class="card-title"> Battery Voltage &nbsp; </h5>
+                        <p id="battery_voltage" class="card-text"><span>- </span> DC  </p>                
                     </div>
                 </div>
                 <div class="card card-inverse  text-center">
                     <div class="card-block">
-                        <h5 class="card-title">পি আর ভি ওপেন </h5>
+                        <h5 class="card-title">PRV Open </h5>
                         <p id="prv_open" class="card-text"><span>- </span> %  </p>                
                     </div>
                 </div>
@@ -74,14 +74,14 @@
             <div class="col-5">
                 <div class="card card-inverse  text-center">
                     <div class="card-block">
-                        <h5 class="card-title"> টারবাইন ভোল্টেজ &nbsp; </h5>
-                        <p id="turbine_voltage" class="card-text"><span>- </span> এসি   </p>                
+                        <h5 class="card-title"> Turbine Voltage &nbsp; </h5>
+                        <p id="turbine_voltage" class="card-text"><span>- </span> AC </p>                
                     </div>
                 </div>
                 <div class="card card-inverse  text-center">
                     <div class="card-block">
-                        <h5 class="card-title">পি আর ভি সেটিং</h5>
-                        <p id="prv_setting" class="card-text"><span>- </span> বার   </p>                
+                        <h5 class="card-title">PRV Setting</h5>
+                        <p id="prv_setting" class="card-text"><span>- </span> Bar  </p>                
                     </div>
                 </div>
             </div>      
@@ -93,7 +93,7 @@
             <div class="col-2">
                 <div class="card card-inverse  text-center">
                     <div class="card-block">
-                        <p id="left" class="card-text"><span>- </span> ডিসি  </p>                
+                        <p id="left" class="card-text"><span>- </span> DC </p>                
                     </div>
                 </div>
             </div>
@@ -105,7 +105,7 @@
             <div class="col-2">
                 <div class="card card-inverse  text-center">
                     <div class="card-block">
-                        <p id="right" class="card-text"><span>- </span> ডিসি  </p>                
+                        <p id="right" class="card-text"><span>- </span> DC </p>                
                     </div>
                 </div>
             </div>
@@ -116,29 +116,29 @@
         <div id="lower" class="row ">
             <div class="col-12 card card-inverse  text-center">
                 <div id="horizontal" class="card-block">
-                    <h5>ইনলেট প্রেশার</h5>                            
-                    <p id="inlet_pressure" class="card-text"><span>- </span> বার  </p>                
+                    <h5>Inlet Pressure</h5>                            
+                    <p id="inlet_pressure" class="card-text"><span>- </span> Bar </p>                
                 </div>
             </div>
             <div class="col-12 card card-inverse  text-center">
                 <div id="horizontal" class="card-block">
-                    <h5>আউটলেট প্রেশার</h5>                            
-                    <p id="outlet_pressure" class="card-text"><span>- </span> বার  </p>                
+                    <h5>Outlet Pressure</h5>                            
+                    <p id="outlet_pressure" class="card-text"><span>- </span> Bar  </p>                
                 </div>
             </div>
             <div class="col-12 card card-inverse  text-center">
                 <div id="horizontal" class="card-block">
-                    <h5>ফ্লো রেট প্রতি মিনিট</h5>                            
+                    <h5>Flow Rate Per Minute</h5>                            
                     <p id="flow_rate" class="card-text"><span>- </span>   </p>                
                 </div>
             </div>
             <div class="col-12 card card-inverse  text-center">
                 <div id="horizontal" class="card-block">
-                    <h5>টোটাল ফ্লো</h5>                            
+                    <h5>Total Flow</h5>                            
                     <p id="total_flow" class="card-text"><span>- </span>   </p>                
                 </div>
             </div>
-            <a class="btn" id="back" href="#" role="button"> <b> পিছনে যান </b></a>
+            <a class="btn" id="back" href="#" role="button"> <b> Go Back </b></a>            
         </div>
         <!-- /3rd row -->
             
@@ -169,12 +169,6 @@
                 $('#main').show();
             });
 
-            //back button
-            $("#back").bind('click', function (event) {
-                event.preventDefault();
-                $('#menu').show();
-                $('#main').hide();
-            });
             // $('.progress-bar').css('height', '75%');
 
             // listen events

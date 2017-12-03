@@ -55,6 +55,18 @@ navbar
 }
 
 /* 
+menu
+ */
+#menu {
+    width: 95%;
+    margin: 15px auto;
+}
+#menu h4 {
+    text-align: center;
+}
+
+
+/* 
 card
 */
 .card {
@@ -126,6 +138,14 @@ extra
  #lower .card {
      margin: 3px 0px;
  }
+ #back {
+     margin: 15px auto 35px;
+ }
+ #back:hover {
+    background: white;
+    border-color: #2f4f4f;
+    color: #2f4f4f;    
+}
  #horizontal h5{
     float: left;
     margin: 0px;
@@ -140,6 +160,9 @@ extra
     }
     .col-5 {
         padding: 0px 10px;
+    }
+    #menu {
+        max-width: 70%;
     }
     #motor img {
         height: 250px;
@@ -156,10 +179,18 @@ extra
  }
 
  /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {  }
+@media (min-width: 768px) { 
+    #menu {
+        max-width: 50%;
+    }
+ }
 
  /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {  }
+@media (min-width: 992px) { 
+    #menu {
+        max-width: 35%;
+    }
+ }
 
  /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  }
